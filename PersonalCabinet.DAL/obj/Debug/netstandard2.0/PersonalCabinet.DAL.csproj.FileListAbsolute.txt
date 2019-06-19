@@ -1,0 +1,14 @@
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\PersonalCabinet.DAL.deps.json
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\PersonalCabinet.DAL.dll
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\PersonalCabinet.DAL.pdb
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\Microsoft.Extensions.Options.dll
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\PersonalCabinet.DataBase.dll
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\PersonalCabinet.DataBase.pdb
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\Microsoft.Extensions.Options.xml
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\obj\Debug\netstandard2.0\PersonalCabinet.DAL.csprojAssemblyReference.cache
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\obj\Debug\netstandard2.0\PersonalCabinet.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\obj\Debug\netstandard2.0\PersonalCabinet.DAL.AssemblyInfoInputs.cache
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\obj\Debug\netstandard2.0\PersonalCabinet.DAL.AssemblyInfo.cs
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\obj\Debug\netstandard2.0\PersonalCabinet.DAL.csproj.CopyComplete
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\obj\Debug\netstandard2.0\PersonalCabinet.DAL.dll
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\obj\Debug\netstandard2.0\PersonalCabinet.DAL.pdb
