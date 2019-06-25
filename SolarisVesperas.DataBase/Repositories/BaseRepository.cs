@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace PersonalCabinet.DataBase.Repositories
 {
-    public abstract class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : IEntity
+    public abstract class BaseRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class, IEntity
     {
-        private readonly IMongoCollection<TEntity> _entity = null;
+        protected readonly IMongoCollection<TEntity> _entity = null;
         private PersonalCabinetContext _context = null;
 
         public BaseRepository(IOptions<Settings> settings)
@@ -48,6 +48,6 @@ namespace PersonalCabinet.DataBase.Repositories
             return await _entity.ReplaceOneAsync(filter, entityItem);
         }
         private IMongoCollection<TEntity> GetEntityCollection()
-            => _context._database.GetCollection<TEntity>(nameof(TEntity));
+            => _context._database.GetCollection<TEntity>(typeof(TEntity).Name);
     }
 }

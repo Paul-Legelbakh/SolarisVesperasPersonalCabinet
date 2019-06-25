@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -6,9 +7,11 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using PersonalCabinet.DAL.Repositories;
 using PersonalCabinet.DataBase;
 using PersonalCabinet.DataBase.Models;
+using PersonalCabinet.UserInterface.Authentification;
 
 namespace UserInterface
 {
@@ -24,13 +27,27 @@ namespace UserInterface
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.RequireHttpsMetadata = false;
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidIssuer = AuthOptions.ISSUER,
+                        ValidateAudience = true,
+                        ValidAudience = AuthOptions.AUDIENCE,
+                        ValidateLifetime = true,
+                        IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
+                        ValidateIssuerSigningKey = true,
+                    };
+                });
 
-            // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
             services.AddMvc();
             services.AddOptions();
             services.Configure<Settings>(options =>
@@ -40,13 +57,9 @@ namespace UserInterface
                 options.Database
                     = Configuration.GetSection("MongoConnection:Database").Value;
             });
-            /*services.AddTransient(x =>
-            {
-                return x.GetService<IOptions<Settings>>();
-            });*/
 
-            services.AddTransient<IRepository<Contact>, UserRepository>();
-            services.AddTransient<IRepository<Purchase>, PurchaseRepository>();
+            services.AddTransient<IGenericRepository<Contact>, UserRepository>();
+            services.AddTransient<IGenericRepository<Purchase>, PurchaseRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -58,7 +71,6 @@ namespace UserInterface
             else
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -66,7 +78,7 @@ namespace UserInterface
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
-            //app.UseMiddleware<PersonalCabinetContext>();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

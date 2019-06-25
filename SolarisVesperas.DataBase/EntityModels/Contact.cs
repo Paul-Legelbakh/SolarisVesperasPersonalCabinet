@@ -15,7 +15,7 @@ namespace PersonalCabinet.DataBase.Models
         public string Address { get; set; } = string.Empty;
         public string SecondName { get; set; } = string.Empty;
         public bool Confirmed { get; set; } = false;
-        public string Password { get; set; } = string.Empty;
-        public List<Purchase> Purchases { get; set; }
+        public string Password { get; set; }
+        public List<Purchase> Purchases { get; set; } = null;
     }
 }

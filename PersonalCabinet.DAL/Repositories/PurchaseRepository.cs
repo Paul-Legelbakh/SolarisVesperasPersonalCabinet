@@ -4,9 +4,6 @@ using MongoDB.Driver;
 using PersonalCabinet.DataBase;
 using PersonalCabinet.DataBase.Models;
 using PersonalCabinet.DataBase.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace PersonalCabinet.DAL.Repositories

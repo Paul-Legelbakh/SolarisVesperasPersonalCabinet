@@ -10,3 +10,5 @@ C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\obj\Debug\netstandard2.0\PersonalCabinet.DataBase.csproj.CopyComplete
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\obj\Debug\netstandard2.0\PersonalCabinet.DataBase.dll
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\obj\Debug\netstandard2.0\PersonalCabinet.DataBase.pdb
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.dll
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.xml
