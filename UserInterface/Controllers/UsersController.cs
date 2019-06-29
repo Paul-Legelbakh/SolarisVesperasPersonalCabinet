@@ -7,7 +7,7 @@ using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using Newtonsoft.Json;
 using OElite;
-using PersonalCabinet.DAL;
+using PersonalCabinet.DAL.Services.Interfaces;
 using PersonalCabinet.DataBase;
 using PersonalCabinet.DataBase.Models;
 using PersonalCabinet.UserInterface.Services;
@@ -18,11 +18,11 @@ namespace PersonalCabinet.UserInterface.Controllers
     [Route("api/[controller]")]
     public class UsersController : Controller
     {
-        private UserService userService; 
+        private IUserService userService; 
 
-        public UsersController(IOptions<Settings> settings)
+        public UsersController(IOptions<Settings> settings, IUserService userService)
         {
-            userService = new UserService(settings);
+            this.userService = userService;
         }
 
         [NoCache]
@@ -43,21 +43,21 @@ namespace PersonalCabinet.UserInterface.Controllers
         [HttpPost("adduser")]
         public void AddUser([FromBody]Contact value)
         {
-            userService.AddEntity(value);
+            userService.AddUser(value);
         }
 
         // PUT api/users
         [HttpPut("{entityId}")]
         public void UpdateUser(ObjectId entityId, [FromBody]string value)
         {
-            userService.UpdateEntity(entityId, value);
+            userService.UpdateUser(entityId, value);
         }
 
         // DELETE api/users
         [HttpDelete("{entityId}")]
         public void DeleteUser(ObjectId entityId)
         {
-            userService.RemoveEntity(entityId);
+            userService.RemoveUser(entityId);
         }
     }
 }

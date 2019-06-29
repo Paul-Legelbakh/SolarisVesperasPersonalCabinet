@@ -9,9 +9,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using PersonalCabinet.DAL.Repositories;
+using PersonalCabinet.DAL.Services.Interfaces;
 using PersonalCabinet.DataBase;
 using PersonalCabinet.DataBase.Models;
 using PersonalCabinet.UserInterface.Authentification;
+using PersonalCabinet.UserInterface.Services;
 
 namespace UserInterface
 {
@@ -60,6 +62,7 @@ namespace UserInterface
 
             services.AddTransient<IGenericRepository<Contact>, UserRepository>();
             services.AddTransient<IGenericRepository<Purchase>, PurchaseRepository>();
+            services.AddTransient<IUserService, UserService>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
