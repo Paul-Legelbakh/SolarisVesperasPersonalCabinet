@@ -1,19 +1,16 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using PersonalCabinet.DAL.Authentification;
 using PersonalCabinet.DAL.Repositories;
 using PersonalCabinet.DAL.Services.Interfaces;
 using PersonalCabinet.DataBase;
 using PersonalCabinet.DataBase.Models;
-using PersonalCabinet.UserInterface.Authentification;
-using PersonalCabinet.UserInterface.Services;
+using PersonalCabinet.DAL.Services;
 
 namespace UserInterface
 {

@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using MongoDB.Bson;
-using Newtonsoft.Json;
 using OElite;
 using PersonalCabinet.DAL.Services.Interfaces;
 using PersonalCabinet.DataBase;
 using PersonalCabinet.DataBase.Models;
-using PersonalCabinet.UserInterface.Services;
 
 namespace PersonalCabinet.UserInterface.Controllers
 {
@@ -29,7 +25,8 @@ namespace PersonalCabinet.UserInterface.Controllers
         [HttpGet]
         public Task<IEnumerable<Contact>> GetAllUsers()
         {
-            return userService.GetUserInternal();
+            var allUsers = userService.GetUserInternal();
+            return allUsers;
         }
 
         // GET api/users
@@ -48,7 +45,7 @@ namespace PersonalCabinet.UserInterface.Controllers
 
         // PUT api/users
         [HttpPut("{entityId}")]
-        public void UpdateUser(ObjectId entityId, [FromBody]string value)
+        public void UpdateUser(ObjectId entityId, [FromBody]Contact value)
         {
             userService.UpdateUser(entityId, value);
         }

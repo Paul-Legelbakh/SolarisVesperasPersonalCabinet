@@ -2,11 +2,14 @@ C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\PersonalCabinet.DAL.dll
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\PersonalCabinet.DAL.pdb
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\Microsoft.Extensions.Options.dll
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\PersonalCabinet.DataBase.dll
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\PersonalCabinet.SystemOperator.dll
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\PersonalCabinet.SystemOperator.pdb
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\PersonalCabinet.DataBase.pdb
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\Microsoft.Extensions.Options.xml
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\Microsoft.IdentityModel.Tokens.pdb
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\bin\Debug\netstandard2.0\Microsoft.IdentityModel.Tokens.xml
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\obj\Debug\netstandard2.0\PersonalCabinet.DAL.csprojAssemblyReference.cache
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\obj\Debug\netstandard2.0\PersonalCabinet.DAL.csproj.CoreCompileInputs.cache
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.DAL\obj\Debug\netstandard2.0\PersonalCabinet.DAL.AssemblyInfoInputs.cache
