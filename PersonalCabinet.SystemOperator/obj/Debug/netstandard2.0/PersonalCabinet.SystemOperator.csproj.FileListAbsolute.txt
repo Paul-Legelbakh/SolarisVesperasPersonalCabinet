@@ -1,0 +1,14 @@
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.SystemOperator\bin\Debug\netstandard2.0\PersonalCabinet.SystemOperator.deps.json
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.SystemOperator\bin\Debug\netstandard2.0\PersonalCabinet.SystemOperator.dll
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.SystemOperator\obj\Debug\netstandard2.0\PersonalCabinet.SystemOperator.csproj.CoreCompileInputs.cache
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.SystemOperator\obj\Debug\netstandard2.0\PersonalCabinet.SystemOperator.AssemblyInfoInputs.cache
+C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\PersonalCabinet.SystemOperator\obj\Debug\netstandard2.0\PersonalCabinet.SystemOperator.AssemblyInfo.cs
+D:\Development\.NET\SolarisVesperasPersonalCabinet\PersonalCabinet.SystemOperator\bin\Debug\netstandard2.0\PersonalCabinet.SystemOperator.deps.json
+D:\Development\.NET\SolarisVesperasPersonalCabinet\PersonalCabinet.SystemOperator\bin\Debug\netstandard2.0\PersonalCabinet.SystemOperator.dll
+D:\Development\.NET\SolarisVesperasPersonalCabinet\PersonalCabinet.SystemOperator\bin\Debug\netstandard2.0\PersonalCabinet.SystemOperator.pdb
+D:\Development\.NET\SolarisVesperasPersonalCabinet\PersonalCabinet.SystemOperator\obj\Debug\netstandard2.0\PersonalCabinet.SystemOperator.csprojAssemblyReference.cache
+D:\Development\.NET\SolarisVesperasPersonalCabinet\PersonalCabinet.SystemOperator\obj\Debug\netstandard2.0\PersonalCabinet.SystemOperator.csproj.CoreCompileInputs.cache
+D:\Development\.NET\SolarisVesperasPersonalCabinet\PersonalCabinet.SystemOperator\obj\Debug\netstandard2.0\PersonalCabinet.SystemOperator.AssemblyInfoInputs.cache
+D:\Development\.NET\SolarisVesperasPersonalCabinet\PersonalCabinet.SystemOperator\obj\Debug\netstandard2.0\PersonalCabinet.SystemOperator.AssemblyInfo.cs
+D:\Development\.NET\SolarisVesperasPersonalCabinet\PersonalCabinet.SystemOperator\obj\Debug\netstandard2.0\PersonalCabinet.SystemOperator.dll
+D:\Development\.NET\SolarisVesperasPersonalCabinet\PersonalCabinet.SystemOperator\obj\Debug\netstandard2.0\PersonalCabinet.SystemOperator.pdb
