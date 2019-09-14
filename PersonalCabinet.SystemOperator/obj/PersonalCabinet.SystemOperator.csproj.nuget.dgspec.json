@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Paul\\VSProjects\\SolarisVesperasPersonalCabinet\\PersonalCabinet.SystemOperator\\PersonalCabinet.SystemOperator.csproj": {}
+    "D:\\Development\\.NET\\SolarisVesperasPersonalCabinet\\PersonalCabinet.SystemOperator\\PersonalCabinet.SystemOperator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Paul\\VSProjects\\SolarisVesperasPersonalCabinet\\PersonalCabinet.SystemOperator\\PersonalCabinet.SystemOperator.csproj": {
+    "D:\\Development\\.NET\\SolarisVesperasPersonalCabinet\\PersonalCabinet.SystemOperator\\PersonalCabinet.SystemOperator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Paul\\VSProjects\\SolarisVesperasPersonalCabinet\\PersonalCabinet.SystemOperator\\PersonalCabinet.SystemOperator.csproj",
+        "projectUniqueName": "D:\\Development\\.NET\\SolarisVesperasPersonalCabinet\\PersonalCabinet.SystemOperator\\PersonalCabinet.SystemOperator.csproj",
         "projectName": "PersonalCabinet.SystemOperator",
-        "projectPath": "C:\\Users\\Paul\\VSProjects\\SolarisVesperasPersonalCabinet\\PersonalCabinet.SystemOperator\\PersonalCabinet.SystemOperator.csproj",
-        "packagesPath": "C:\\Users\\Paul\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Paul\\VSProjects\\SolarisVesperasPersonalCabinet\\PersonalCabinet.SystemOperator\\obj\\",
+        "projectPath": "D:\\Development\\.NET\\SolarisVesperasPersonalCabinet\\PersonalCabinet.SystemOperator\\PersonalCabinet.SystemOperator.csproj",
+        "packagesPath": "C:\\Users\\Pavel Legelbakh\\.nuget\\packages\\",
+        "outputPath": "D:\\Development\\.NET\\SolarisVesperasPersonalCabinet\\PersonalCabinet.SystemOperator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Paul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Pavel Legelbakh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -43,11 +43,19 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "JWT": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[5.5.0, )"
             }
           },
           "imports": [

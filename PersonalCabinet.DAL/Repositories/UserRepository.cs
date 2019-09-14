@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace PersonalCabinet.DAL.Repositories
 {
-    public class UserRepository : BaseRepository<Contact>
+    public class UserRepository : BaseRepository<User>
     {
         public UserRepository(IOptions<Settings> settings) : base(settings) { }
 
-        public override async Task<UpdateResult> UpdateEntity(ObjectId entityId, Contact entityItem)
+        public override async Task<UpdateResult> UpdateEntity(ObjectId entityId, User entityItem)
         {
-            var filter = Builders<Contact>.Filter.Eq(ent => ent.Entity_id, entityId);
-            var update = Builders<Contact>.Update
+            var filter = Builders<User>.Filter.Eq(ent => ent.Entity_id, entityId);
+            var update = Builders<User>.Update
                             .CurrentDate(ent => ent.ModifiedOn)
                             .Set(ent => ent.Name, entityItem.Name)
                             .Set(ent => ent.SecondName, entityItem.SecondName)

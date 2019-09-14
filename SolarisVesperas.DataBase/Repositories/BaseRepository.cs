@@ -1,9 +1,8 @@
-﻿using Microsoft.Extensions.Options;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Driver;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 
 namespace PersonalCabinet.DataBase.Repositories
 {
@@ -27,6 +26,19 @@ namespace PersonalCabinet.DataBase.Repositories
         {
             var filter = Builders<TEntity>.Filter.Eq("Entity_id", entityId);
             return await _entity.Find(filter)
+                            .FirstOrDefaultAsync();
+        }
+
+        public virtual async Task<TEntity> GetEntity(Dictionary<string, string> arguments)
+        {
+            var filterCondition = new BsonArray();
+            foreach (var item in arguments)
+            {
+                filterCondition.Add(new BsonDocument(item.Key, item.Value));
+            }
+            var fullFilter = new BsonDocument("$and", filterCondition);
+
+            return await _entity.Find(fullFilter)
                             .FirstOrDefaultAsync();
         }
 

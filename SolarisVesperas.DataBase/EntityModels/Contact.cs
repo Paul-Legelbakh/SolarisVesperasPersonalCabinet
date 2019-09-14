@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PersonalCabinet.DataBase.Models
 {
-    public class Contact : BaseEntity
+    public class User : BaseEntity
     {
         public Guid? LoyaltyEntity_id { get; set; } = null;
         public string Email { get; set; }
@@ -16,6 +16,7 @@ namespace PersonalCabinet.DataBase.Models
         public string SecondName { get; set; } = string.Empty;
         public bool Confirmed { get; set; } = false;
         public string Password { get; set; }
+        public string Role { get; set; }
         public List<Purchase> Purchases { get; set; } = null;
     }
 }

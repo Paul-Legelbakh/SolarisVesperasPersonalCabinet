@@ -9,7 +9,7 @@ namespace PersonalCabinet.DAL
 {
     public class UnitOfWork : IDisposable
     {
-        private readonly IGenericRepository<Contact> userRepository;
+        private readonly IGenericRepository<User> userRepository;
         private readonly IGenericRepository<Purchase> purchaseRepository;
 
         public UnitOfWork(IOptions<Settings> settings)
@@ -19,7 +19,7 @@ namespace PersonalCabinet.DAL
             purchaseRepository = new PurchaseRepository(settings);
         }
 
-        public IGenericRepository<Contact> Users
+        public IGenericRepository<User> Users
             => userRepository ?? throw new MongoException("Can not to read user repository");
 
         public IGenericRepository<Purchase> Purchases

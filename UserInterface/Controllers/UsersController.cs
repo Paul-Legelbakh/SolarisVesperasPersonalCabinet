@@ -14,47 +14,47 @@ namespace PersonalCabinet.UserInterface.Controllers
     [Route("api/[controller]")]
     public class UsersController : Controller
     {
-        private IUserService userService; 
+        private readonly IUserService _userService; 
 
-        public UsersController(IOptions<Settings> settings, IUserService userService)
+        public UsersController(IUserService userService)
         {
-            this.userService = userService;
+            _userService = userService;
         }
 
         [NoCache]
         [HttpGet]
-        public Task<IEnumerable<Contact>> GetAllUsers()
+        public Task<IEnumerable<User>> GetAllUsers()
         {
-            var allUsers = userService.GetUserInternal();
+            var allUsers = _userService.GetUserInternal();
             return allUsers;
         }
 
         // GET api/users
         [HttpGet("{entityId}")]
-        public Task<Contact> GetUser(ObjectId entityId)
+        public Task<User> GetUser(ObjectId entityId)
         {
-            return userService.GetUserByIdInternal(entityId);
+            return _userService.GetUserByIdInternal(entityId);
         }
 
         // POST api/users
         [HttpPost("adduser")]
-        public void AddUser([FromBody]Contact value)
+        public void AddUser([FromBody]User value)
         {
-            userService.AddUser(value);
+            _userService.AddUser(value);
         }
 
         // PUT api/users
         [HttpPut("{entityId}")]
-        public void UpdateUser(ObjectId entityId, [FromBody]Contact value)
+        public void UpdateUser(ObjectId entityId, [FromBody]User value)
         {
-            userService.UpdateUser(entityId, value);
+            _userService.UpdateUser(entityId, value);
         }
 
         // DELETE api/users
         [HttpDelete("{entityId}")]
         public void DeleteUser(ObjectId entityId)
         {
-            userService.RemoveUser(entityId);
+            _userService.RemoveUser(entityId);
         }
     }
 }

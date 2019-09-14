@@ -1,6 +1,5 @@
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\bin\Debug\netstandard2.0\PersonalCabinet.DataBase.deps.json
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\bin\Debug\netstandard2.0\PersonalCabinet.DataBase.dll
-C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\bin\Debug\netstandard2.0\PersonalCabinet.DataBase.pdb
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\bin\Debug\netstandard2.0\Microsoft.Extensions.Options.dll
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.dll
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\bin\Debug\netstandard2.0\Microsoft.Extensions.Options.xml
@@ -10,5 +9,12 @@ C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\obj\Debug\netstandard2.0\PersonalCabinet.DataBase.AssemblyInfoInputs.cache
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\obj\Debug\netstandard2.0\PersonalCabinet.DataBase.AssemblyInfo.cs
 C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\obj\Debug\netstandard2.0\PersonalCabinet.DataBase.csproj.CopyComplete
-C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\obj\Debug\netstandard2.0\PersonalCabinet.DataBase.dll
-C:\Users\Paul\VSProjects\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\obj\Debug\netstandard2.0\PersonalCabinet.DataBase.pdb
+D:\Development\.NET\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\bin\Debug\netstandard2.0\PersonalCabinet.DataBase.deps.json
+D:\Development\.NET\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\bin\Debug\netstandard2.0\PersonalCabinet.DataBase.dll
+D:\Development\.NET\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\bin\Debug\netstandard2.0\PersonalCabinet.DataBase.pdb
+D:\Development\.NET\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\obj\Debug\netstandard2.0\PersonalCabinet.DataBase.csprojAssemblyReference.cache
+D:\Development\.NET\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\obj\Debug\netstandard2.0\PersonalCabinet.DataBase.csproj.CoreCompileInputs.cache
+D:\Development\.NET\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\obj\Debug\netstandard2.0\PersonalCabinet.DataBase.AssemblyInfoInputs.cache
+D:\Development\.NET\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\obj\Debug\netstandard2.0\PersonalCabinet.DataBase.AssemblyInfo.cs
+D:\Development\.NET\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\obj\Debug\netstandard2.0\PersonalCabinet.DataBase.dll
+D:\Development\.NET\SolarisVesperasPersonalCabinet\SolarisVesperas.DataBase\obj\Debug\netstandard2.0\PersonalCabinet.DataBase.pdb

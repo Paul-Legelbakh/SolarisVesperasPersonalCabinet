@@ -5,12 +5,12 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using PersonalCabinet.DAL.Authentification;
 using PersonalCabinet.DAL.Repositories;
 using PersonalCabinet.DAL.Services.Interfaces;
 using PersonalCabinet.DataBase;
 using PersonalCabinet.DataBase.Models;
 using PersonalCabinet.DAL.Services;
+using PersonalCabinet.UserInterface.System.JWTAuthServer;
 
 namespace UserInterface
 {
@@ -38,7 +38,7 @@ namespace UserInterface
                         ValidAudience = AuthOptions.AUDIENCE,
                         ValidateLifetime = true,
                         IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
-                        ValidateIssuerSigningKey = true,
+                        ValidateIssuerSigningKey = true
                     };
                 });
 
@@ -57,7 +57,7 @@ namespace UserInterface
                     = Configuration.GetSection("MongoConnection:Database").Value;
             });
 
-            services.AddTransient<IGenericRepository<Contact>, UserRepository>();
+            services.AddTransient<IGenericRepository<User>, UserRepository>();
             services.AddTransient<IGenericRepository<Purchase>, PurchaseRepository>();
             services.AddTransient<IUserService, UserService>();
         }

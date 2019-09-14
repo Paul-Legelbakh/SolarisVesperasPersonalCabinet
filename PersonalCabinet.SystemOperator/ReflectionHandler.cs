@@ -13,6 +13,6 @@ namespace PersonalCabinet.DAL
                 where !type.IsInterface && !type.IsAbstract
                 where interfaceType.IsAssignableFrom(type)
                 select type)
-            .First();
+            .FirstOrDefault();
     }
 }
