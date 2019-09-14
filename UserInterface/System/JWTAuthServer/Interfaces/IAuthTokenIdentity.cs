@@ -9,9 +9,8 @@ namespace PersonalCabinet.UserInterface.System.JWTAuthServer
 {
     public interface IAuthTokenIdentity
     {
-        Task<ClaimsIdentity> GetIdentityAsync(User userEntity);
-        Task<ClaimsIdentity> GetIdentityAsync(string userEmail, string userPassword);
+        Task<ClaimsIdentity> LoginAsync(string userEmail, string userPassword);
         string CreateToken(ClaimsIdentity identity);
-        Task<bool> Registration(string userEmail, string userPassword);
+        Task<bool> RegistrationAsync(string userEmail, string userPassword);
     }
 }

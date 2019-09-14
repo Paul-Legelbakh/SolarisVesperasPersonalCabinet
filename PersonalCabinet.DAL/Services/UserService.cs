@@ -19,27 +19,27 @@ namespace PersonalCabinet.DAL.Services
 
         public async Task<IEnumerable<User>> GetUserInternal()
         {
-            return await uof.Users.GetAllEntities();
+            return await uof.Users.GetAllEntitiesAsync();
         }
 
         public async Task<User> GetUserByIdInternal(ObjectId entityId)
         {
-            return await uof.Users.GetEntity(entityId) ?? new User();
+            return await uof.Users.GetEntityAsync(entityId) ?? new User();
         }
 
         public void AddUser(User entityItem)
         {
-            uof.Users.AddEntity(entityItem);
+            uof.Users.AddEntityAsync(entityItem);
         }
 
         public void UpdateUser(ObjectId entityId, User value)
         {
-            uof.Users.UpdateEntity(entityId, value);
+            uof.Users.UpdateEntityAsync(entityId, value);
         }
 
         public void RemoveUser(ObjectId entityId)
         {
-            uof.Users.RemoveEntity(entityId);
+            uof.Users.RemoveEntityAsync(entityId);
         }
     }
 }

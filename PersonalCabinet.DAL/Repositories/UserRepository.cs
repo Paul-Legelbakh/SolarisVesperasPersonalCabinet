@@ -12,7 +12,7 @@ namespace PersonalCabinet.DAL.Repositories
     {
         public UserRepository(IOptions<Settings> settings) : base(settings) { }
 
-        public override async Task<UpdateResult> UpdateEntity(ObjectId entityId, User entityItem)
+        public override async Task<UpdateResult> UpdateEntityAsync(ObjectId entityId, User entityItem)
         {
             var filter = Builders<User>.Filter.Eq(ent => ent.Entity_id, entityId);
             var update = Builders<User>.Update

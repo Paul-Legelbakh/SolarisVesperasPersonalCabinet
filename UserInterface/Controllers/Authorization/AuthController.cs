@@ -30,7 +30,7 @@ namespace PersonalCabinet.UserInterface.Controllers.Authorization
         [HttpPost, Route("signin")]
         public async Task Login([FromBody]AuthLoginDto req)
         {
-            var identity = await _tokenHandler.GetIdentityAsync(req.Email, req.Password);
+            var identity = await _tokenHandler.LoginAsync(req.Email, req.Password);
             if (identity == null)
             {
                 Response.StatusCode = 401;
@@ -45,10 +45,10 @@ namespace PersonalCabinet.UserInterface.Controllers.Authorization
         [HttpPost, Route("signup")]
         public async Task Registration([FromBody]AuthRegisterDto req)
         {
-            if (await _tokenHandler.Registration(req.Email, req.Password))
+            if (!await _tokenHandler.RegistrationAsync(req.Email, req.Password))
             {
                 Response.StatusCode = 400;
-                await Response.WriteAsync("User does not exist!");
+                await Response.WriteAsync("User already exists!");
                 return;
             }
             await Response.WriteAsync("Registration is successed.");

@@ -17,19 +17,19 @@ namespace PersonalCabinet.DataBase.Repositories
             _entity = GetEntityCollection();
         }
         
-        public virtual async Task<IEnumerable<TEntity>> GetAllEntities()
+        public virtual async Task<IEnumerable<TEntity>> GetAllEntitiesAsync()
         {
             return await _entity.Find(_ => true).ToListAsync();
         }
 
-        public virtual async Task<TEntity> GetEntity(ObjectId entityId)
+        public virtual async Task<TEntity> GetEntityAsync(ObjectId entityId)
         {
             var filter = Builders<TEntity>.Filter.Eq("Entity_id", entityId);
             return await _entity.Find(filter)
                             .FirstOrDefaultAsync();
         }
 
-        public virtual async Task<TEntity> GetEntity(Dictionary<string, string> arguments)
+        public virtual async Task<TEntity> GetEntityAsync(Dictionary<string, string> arguments)
         {
             var filterCondition = new BsonArray();
             foreach (var item in arguments)
@@ -38,23 +38,22 @@ namespace PersonalCabinet.DataBase.Repositories
             }
             var fullFilter = new BsonDocument("$and", filterCondition);
 
-            return await _entity.Find(fullFilter)
-                            .FirstOrDefaultAsync();
+            return await _entity.Find(fullFilter).FirstOrDefaultAsync();
         }
 
-        public virtual async Task AddEntity(TEntity entityItem)
+        public virtual async Task AddEntityAsync(TEntity entityItem)
         {
             await _entity.InsertOneAsync(entityItem);
         }
 
-        public virtual async Task<DeleteResult> RemoveEntity(ObjectId entityId)
+        public virtual async Task<DeleteResult> RemoveEntityAsync(ObjectId entityId)
         {
             return await _entity.DeleteOneAsync(
                  Builders<TEntity>.Filter.Eq("Entity_id", entityId));
         }
-        public abstract Task<UpdateResult> UpdateEntity(ObjectId entityId, TEntity entityItem);
+        public abstract Task<UpdateResult> UpdateEntityAsync(ObjectId entityId, TEntity entityItem);
 
-        public virtual async Task<ReplaceOneResult> ReplaceEntity(ObjectId entityId, TEntity entityItem)
+        public virtual async Task<ReplaceOneResult> ReplaceEntityAsync(ObjectId entityId, TEntity entityItem)
         {
             var filter = Builders<TEntity>.Filter.Eq("Entity_id", entityId);
             return await _entity.ReplaceOneAsync(filter, entityItem);

@@ -15,33 +15,13 @@ namespace PersonalCabinet.UserInterface.System.JWTAuthServer
     public class AuthTokenIdentity : IAuthTokenIdentity
     {
         private readonly UnitOfWork uof;
-        private readonly IUserService _userService;
 
-        public AuthTokenIdentity(IOptions<Settings> settings, IUserService service)
+        public AuthTokenIdentity(IOptions<Settings> settings)
         {
             uof = new UnitOfWork(settings);
-            _userService = service;
         }
 
-        public async virtual Task<ClaimsIdentity> GetIdentityAsync(User userEntity)
-        {
-            var existUser = await GetUserDataAsync(userEntity.Email, userEntity.Password);
-            if (existUser == null)
-                return null;
-
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimsIdentity.DefaultNameClaimType, existUser.Email),
-                new Claim(ClaimsIdentity.DefaultRoleClaimType, existUser.Role)
-            };
-
-            ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "Token",
-                ClaimsIdentity.DefaultNameClaimType,
-                ClaimsIdentity.DefaultRoleClaimType);
-            return claimsIdentity;
-        }
-
-        public async virtual Task<ClaimsIdentity> GetIdentityAsync(string userEmail, string userPassword)
+        public async virtual Task<ClaimsIdentity> LoginAsync(string userEmail, string userPassword)
         {
             var existUser = await GetUserDataAsync(userEmail, userPassword);
             if (existUser == null)
@@ -50,17 +30,20 @@ namespace PersonalCabinet.UserInterface.System.JWTAuthServer
             return GetUserClaim(existUser);
         }
 
-        public async virtual Task<bool> Registration(string userEmail, string userPassword)
+        public async virtual Task<bool> RegistrationAsync(string userEmail, string userPassword)
         {
-            var existUser = await GetUserDataAsync(userEmail, userPassword);
+            var existUser = await GetUserDataAsync(userEmail);
             if (existUser != null)
                 return false;
             
-            var newUser = new User();
-            newUser.Email = userEmail;
-            newUser.Password = userPassword;
-            newUser.Role = "SimpleUser";
-            await uof.Users.AddEntity(newUser);
+            var newUser = new User
+            {
+                Email = userEmail,
+                Password = userPassword,
+                Role = "SimpleUser"
+            };
+
+            await uof.Users.AddEntityAsync(newUser);
             return true;
         }
 
@@ -72,7 +55,8 @@ namespace PersonalCabinet.UserInterface.System.JWTAuthServer
                     audience: AuthOptions.AUDIENCE,
                     claims: identity.Claims,
                     expires: DateTime.UtcNow.Add(TimeSpan.FromMinutes(AuthOptions.LIFETIME)),
-                    signingCredentials: new SigningCredentials(AuthOptions.GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256));
+                    signingCredentials: new SigningCredentials(AuthOptions.GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256)
+                    );
             return new JwtSecurityTokenHandler().WriteToken(jwt);
         }
 
@@ -84,15 +68,21 @@ namespace PersonalCabinet.UserInterface.System.JWTAuthServer
                 new Claim(ClaimsIdentity.DefaultRoleClaimType, userEntity.Role)
             };
 
-            ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "Token",
+            ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "AccessToken",
                 ClaimsIdentity.DefaultNameClaimType,
                 ClaimsIdentity.DefaultRoleClaimType);
             return claimsIdentity;
         }
 
+        private async Task<User> GetUserDataAsync(string userEmail)
+        {
+            return await uof.Users.GetEntityAsync(new Dictionary<string, string> {
+                { "Email", userEmail }
+            });
+        }
         private async Task<User> GetUserDataAsync(string userEmail, string userPassword)
         {
-            return await uof.Users.GetEntity(new Dictionary<string, string> {
+            return await uof.Users.GetEntityAsync(new Dictionary<string, string> {
                 { "Email", userEmail },
                 { "Password", userPassword }
             });

@@ -7,12 +7,12 @@ namespace PersonalCabinet.DataBase
 {
     public interface IGenericRepository<TEntity> where TEntity : IEntity
     {
-        Task<IEnumerable<TEntity>> GetAllEntities();
-        Task AddEntity(TEntity entityItem);
-        Task<TEntity> GetEntity(ObjectId entityId);
-        Task<TEntity> GetEntity(Dictionary<string, string> arguments);
-        Task<UpdateResult> UpdateEntity(ObjectId entityId, TEntity entityItem);
-        Task<DeleteResult> RemoveEntity(ObjectId entityId);
-        Task<ReplaceOneResult> ReplaceEntity(ObjectId entityId, TEntity entityBody);
+        Task<IEnumerable<TEntity>> GetAllEntitiesAsync();
+        Task AddEntityAsync(TEntity entityItem);
+        Task<TEntity> GetEntityAsync(ObjectId entityId);
+        Task<TEntity> GetEntityAsync(Dictionary<string, string> arguments);
+        Task<UpdateResult> UpdateEntityAsync(ObjectId entityId, TEntity entityItem);
+        Task<DeleteResult> RemoveEntityAsync(ObjectId entityId);
+        Task<ReplaceOneResult> ReplaceEntityAsync(ObjectId entityId, TEntity entityBody);
     }
 }

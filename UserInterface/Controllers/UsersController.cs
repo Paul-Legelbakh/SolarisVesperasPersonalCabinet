@@ -30,10 +30,10 @@ namespace PersonalCabinet.UserInterface.Controllers
         }
 
         // GET api/users
-        [HttpGet("{entityId}")]
+        [HttpGet]
         public Task<User> GetUser(ObjectId entityId)
         {
-            return _userService.GetUserByIdInternal(entityId);
+            return _userService.GetUserByIdInternal(ObjectId.Parse(Request.Cookies["UserId"]));
         }
 
         // POST api/users
@@ -45,16 +45,16 @@ namespace PersonalCabinet.UserInterface.Controllers
 
         // PUT api/users
         [HttpPut("{entityId}")]
-        public void UpdateUser(ObjectId entityId, [FromBody]User value)
+        public void UpdateUser([FromBody]User value)
         {
-            _userService.UpdateUser(entityId, value);
+            _userService.UpdateUser(ObjectId.Parse(Request.Cookies["UserId"]), value);
         }
 
         // DELETE api/users
-        [HttpDelete("{entityId}")]
-        public void DeleteUser(ObjectId entityId)
+        [HttpDelete]
+        public void DeleteUser()
         {
-            _userService.RemoveUser(entityId);
+            _userService.RemoveUser(ObjectId.Parse(Request.Cookies["UserId"]));
         }
     }
 }
